@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "dndHome",
+    "description": "A very interesting project.",
+    "slug": "dndHome",
+    "privacy": "public",
+    "sdkVersion": "22.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.ronandorf61.dndhome"
+    }
+  }
+}

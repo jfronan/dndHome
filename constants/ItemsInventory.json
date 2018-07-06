@@ -1,0 +1,89 @@
+{
+    "items":[
+    {
+        "id": 1,
+        "nombre": "Night Caller",
+        "desc": "This whistle is carved from transparent crystal, and it resembles a tiny dragon curled up like a snail. The name Night Caller is etched on the whistle in Dwarvish runes. If a character succeeds on a DC 20 Intelligence (Arcana or History) check, the character recalls lore that says the duergar made several such whistles for various groups in an age past. If you blow the whistle in darkness or under the night sky, it allows you to cast the animate dead spell. The target can be affected through up to 10 feet of soft earth or similar material, and if it is, it takes 1 minute to claw its way to the surface to serve you. Once the whistle has animated an undead creature, it can't do so again until 7 days have passed. Once every 24 hours, you can blow the whistle to reassert control over one or two creatures you animated with it.",
+        "rarity": "uncommon",
+        "type": "wondrous",
+        "legacy": "The Sunless Citadel"
+    },
+    {
+        "id": 2,
+        "nombre": "Wand of Entangle",
+        "desc": "This wand has 7 charges. While holding it, you can use an action to expend 1 of its charges to cast the entangle spell (save DC 13) from it. The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand's last charge, roll a d20. On a 1, the wand crumbles into ashes and is destroyed.",
+        "rarity": "uncommon",
+        "type": "equipment",
+        "equipType": "Wand",
+        "attune": "true",
+        "legacy": "The Sunless Citadel"
+    },
+    {
+        "id": 3,
+        "nombre": "Arrow +1",
+        "desc": "You have a bonus to attack and damage rolls of +1 made with this arrow. Once it hits a target, the ammunition is no longer magical.",
+        "rarity": "uncommon",
+        "type": "equipment",
+        "equipType": "Ammunition"
+    },
+    {
+        "id": 4,
+        "nombre": "Dragon Scale Mail (Red)",
+        "desc": "Made of the scales of a red dragon. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to fire. Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest red dragon within 30 miles of you. This special action can't be used again until the next dawn.",
+        "rarity": "very rare",
+        "type": "equipment",
+        "equipType": "Armor (Scale Mail)",
+        "attune": "true"
+    },
+    {
+        "id": 5,
+        "nombre": "Elixir of Health",
+        "desc": "When you drink this potion, it cures any disease afflicting you, and it removes the blinded, deafened, paralyzed, and poisoned conditions. The clear red liquid has tiny bubbles of light in it.",
+        "rarity": "rare",
+        "type": "consumable"
+    },
+    {
+        "id": 6,
+        "nombre": "Potion of Healing",
+        "desc": "You regain 2d4+2 hit points when you drink this potion. Whatever its potency, the potion's red liquid glimmers when agitated.",
+        "rarity": "common",
+        "type": "consumable"
+    },
+    {
+        "id": 7,
+        "nombre": "Potion of Fire Resistance",
+        "desc": "When you drink this potion, you gain resistance to fire damage for 1 hour.",
+        "rarity": "uncommon",
+        "type": "consumable"
+    },
+    {
+        "id": 8,
+        "nombre": "Quaal's Feather Token (Tree)",
+        "desc": "This tiny object looks like a feather. You must be outdoors to use this token. You can use an action to touch it to an unoccupied space on the ground. The token disappears, and in its place a nonmagical oak tree springs into existence. The tree is 60 feet tall and has a 5-foot-diameter trunk, and its branches at the top spread out in a 20-foot radius.",
+        "rarity": "rare",
+        "type": "wondrous"
+    },
+    {
+        "id": 9,
+        "nombre": "Wand of Secrets",
+        "desc": "The wand has 3 charges. While holding it. you can use an action to expend 1 of its charges, and if a secret door or trap is within 30 feet of you, the wand pulses and points at the one nearest to you. The wand regains 1d3 expended charges daily at dawn.",
+        "rarity": "uncommon",
+        "type": "equipment",
+        "equipType": "Wand"
+    },
+    {
+        "id": 10,
+        "nombre": "Continual Torch (Green)",
+        "desc": "A green flame, equivalent in brightness to a torch, springs forth from it. The effect looks like a regular flame, but it creates no heat and doesn't use oxygen. A continual flame can be covered or hidden but not smothered or quenched.",
+        "rarity": "common",
+        "type": "wondrous"
+    },
+    {
+        "id": 11,
+        "nombre": "Continual Candle (Blue)",
+        "desc": "A blue flame, equivalent in brightness to a torch, springs forth from it. The effect looks like a regular flame, but it creates no heat and doesn't use oxygen. A continual flame can be covered or hidden but not smothered or quenched.",
+        "rarity": "common",
+        "type": "wondrous"
+    }
+    ]
+}
