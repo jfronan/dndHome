@@ -23,6 +23,10 @@ export class MagicItem extends Component {
       }
     }
     openModal() {
+      if (this.props.parentFunction){
+          this.props.parentFunction();
+          return;
+      }  
       var newState = this.state;
       newState.modalData.show = true;
       this.setState(newState);

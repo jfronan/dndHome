@@ -12,22 +12,61 @@ import {
   Modal
 } from 'react-native';
 import { MagicItem } from '../components/MagicItem.js';
-import itemInventory from '../constants/ItemsInventory.json';
+import itemFullList from '../constants/ItemsInventory.json';
+import { AsyncStorage } from "react-native";
+import AddItemList from '../components/AddItemList.js';
+
 export default class ItemsScreen extends React.Component {
   constructor() {
     super();
-    this.state = { 
-      itemList: itemInventory.items,
+    this.state = {
+      playerItems: [],
       filterCommon: true,
       filterUncommon: true,
       filterRare: true,
       filterVRare: true,
       filterLegendary: true,
+      eraseSelect: [],
+      modalAddShow: false
     }
     this.alterFilter = this.alterFilter.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.addPlayerItem = this.addPlayerItem.bind(this);
   }
   static navigationOptions = {
     header: null,
+  };
+
+  async componentDidMount(){
+    var storageKeys = await AsyncStorage.getAllKeys();
+    storageKeys.forEach(key => this.addPlayerItem(key));
+  }
+
+  async addPlayerItem(key){
+    var listerItem = await JSON.parse(await AsyncStorage.getItem(key));
+    var checkXistence = this.state.playerItems.filter((xItem)=>{
+      return (xItem.id === listerItem.id);
+    })
+    if (checkXistence.length) {
+      console.log('item repetido')
+      // agregar funcion que aumente cantidad en db
+      return;
+    }
+    this.setState({ 
+      playerItems: this.state.playerItems.concat([listerItem])
+    })
+  }
+
+  openModal() {
+    this.setState(()=> ({
+      modalAddShow: true
+    }))
+  };
+  closeModal() {
+    this.setState(()=> ({
+      modalAddShow: false
+    }))
   };
   
   alterFilter(fName, value){
@@ -86,16 +125,34 @@ export default class ItemsScreen extends React.Component {
         </TouchableOpacity>
       </View>
       <View style={{flex: 1}}>
-        <FlatList contentContainerStyle={styles.contentContainer}
-        data={this.state.itemList.filter((item)=>this.showWithRarity(item.rarity))}
-        extraData={this.state}
-        numColumns={3}
-        keyExtractor={(item,index)=>item.id.toString()}
-        renderItem={({item})=> <MagicItem
-                                  itemData={item}
-                                  />}
-        />
+      <FlatList contentContainerStyle={styles.contentContainer}
+                    data={this.state.playerItems.filter((item)=>this.showWithRarity(item.rarity))}
+                    numColumns={3}
+                    keyExtractor={(item,index)=>item.id.toString()}
+                    renderItem={({item})=> <MagicItem
+                                            itemData={item}
+                                            />
+                                            }
+                />
       </View>
+      <View style={styles.botoneraContainer}>
+        <TouchableOpacity style={[{backgroundColor: 'lawngreen'}, styles.botoneraButton]} onPress={()=>this.openModal()}>
+          <Text>Agregar</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[{backgroundColor: 'red'}, styles.botoneraButton]} onPress={()=>{AsyncStorage.clear(); this.setState({playerItems: []})}}>
+          <Text>Eliminar</Text>
+        </TouchableOpacity>
+      </View>
+
+      <Modal
+        visible={this.state.modalAddShow}
+        onRequestClose={this.closeModal}
+        animationType='fade'
+        onDismiss={this.closeModal}
+      >
+        <AddItemList addToPlayer={(aKey)=>{this.addPlayerItem(aKey)}}/>
+      </Modal>
+
     </ImageBackground>
 
     );
@@ -157,5 +214,17 @@ const styles = StyleSheet.create({
   filterText: {
     fontSize: 12,
     lineHeight: 14,
+  },
+  botoneraContainer: {
+    padding: 1,
+    flexDirection: 'row',
+    height: 25
+  },
+  botoneraButton: {
+    flex: 1, 
+    alignItems: 'center',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: 'midnightblue'
   }
 });

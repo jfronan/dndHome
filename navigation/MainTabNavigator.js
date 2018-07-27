@@ -6,6 +6,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import MagicItemsScreen from '../screens/MagicItemsScreen'
+import SettingsScreen from '../screens/SettingsScreen';
 
 const MagicStack = createStackNavigator({
    Items: MagicItemsScreen,
@@ -22,7 +23,7 @@ MagicStack.navigationOptions = {
 };
 
 const HomeStack = createStackNavigator({
-  Items: MagicItemsScreen,
+  Items: SettingsScreen,
 });
 
 HomeStack.navigationOptions = {
